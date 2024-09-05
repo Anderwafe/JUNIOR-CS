@@ -5,12 +5,18 @@ namespace homework_1;
 
 public struct History : IParsable<History>
 {
+    // ?: Delete ID's from history and ratio structs and use dictionaries with id's as keys in economics class.
     private int _id;
-    private DateOnly _date;
+    private DateTime _date;
     private int _sales;
     private int _stock;
+
+    public int Id => _id;
+    public DateTime Date => _date;
+    public int Sales => _sales;
+    public int Stock => _stock;
     
-    public History(int id, DateOnly date, int sales, int stock)
+    public History(int id, DateTime date, int sales, int stock)
     {
         _id = id;
         _date = date;
@@ -20,6 +26,8 @@ public struct History : IParsable<History>
 
         Guard.IsGreaterThanOrEqualTo<int>(stock, 0);
         _stock = stock;
+
+        Guard.IsGreaterThanOrEqualTo<int>(_stock, _sales);
     }
 
     public static History Parse(string s, IFormatProvider? provider)
@@ -36,7 +44,7 @@ public struct History : IParsable<History>
         
         var _stock = int.Parse(parts[3]);
 
-        return new History(_id, _date, _sales, _stock);
+        return new History(_id, _date.ToDateTime(new TimeOnly()), _sales, _stock);
     }
 
     public static bool TryParse([NotNullWhen(true)] string? s, IFormatProvider? provider, [MaybeNullWhen(false)] out History result)
@@ -55,7 +63,7 @@ public struct History : IParsable<History>
             
             var _stock = int.Parse(parts[3]);
 
-            result = new History(_id, _date, _sales, _stock);
+            result = new History(_id, _date.ToDateTime(new TimeOnly()), _sales, _stock);
         }
         catch
         {
@@ -64,9 +72,4 @@ public struct History : IParsable<History>
         }
         return true;
     }
-
-    public int Id => _id;
-    public DateOnly Date => _date;
-    public int Sales => _sales;
-    public int Stock => _stock;
 }

@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "homework-1", "homework-1", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homework-1", "homework-1\EconomicsLib\homework-1.csproj", "{96235690-4AC7-4031-9FAB-5E49A55AAEDD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homework-1.Tests", "homework-1\homework-1.Tests\homework-1.Tests.csproj", "{1D24166D-7829-4E63-B7D1-8FFD53D29488}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,8 +34,21 @@ Global
 		{96235690-4AC7-4031-9FAB-5E49A55AAEDD}.Release|x64.Build.0 = Release|Any CPU
 		{96235690-4AC7-4031-9FAB-5E49A55AAEDD}.Release|x86.ActiveCfg = Release|Any CPU
 		{96235690-4AC7-4031-9FAB-5E49A55AAEDD}.Release|x86.Build.0 = Release|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Debug|x64.Build.0 = Debug|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Release|x64.ActiveCfg = Release|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Release|x64.Build.0 = Release|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{96235690-4AC7-4031-9FAB-5E49A55AAEDD} = {3F0FA92D-62B0-4AB8-A92F-EBC8AEC91A3D}
+		{1D24166D-7829-4E63-B7D1-8FFD53D29488} = {3F0FA92D-62B0-4AB8-A92F-EBC8AEC91A3D}
 	EndGlobalSection
 EndGlobal

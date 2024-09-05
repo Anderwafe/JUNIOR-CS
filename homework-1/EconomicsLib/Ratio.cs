@@ -10,6 +10,10 @@ public struct Ratio : IParsable<Ratio>
     private int _month;
     private float _coef;
 
+    public int Id => _id;
+    public int Month => _month;
+    public float Coef => _coef;
+
     public Ratio(int id, int month, float coef)
     {
         _id = id;
@@ -20,10 +24,6 @@ public struct Ratio : IParsable<Ratio>
         Guard.IsGreaterThanOrEqualTo<float>(coef, 0);
         _coef = coef;
     }
-
-    public int Id => _id;
-    public int Month => _month;
-    public float Coef => _coef;
 
     public static Ratio Parse(string s, IFormatProvider? provider)
     {

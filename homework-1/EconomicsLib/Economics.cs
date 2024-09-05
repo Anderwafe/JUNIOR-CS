@@ -1,3 +1,4 @@
+using System.Security.Cryptography.X509Certificates;
 using CommunityToolkit.Diagnostics;
 
 namespace homework_1;
@@ -42,10 +43,24 @@ public class Economics
         _ratios = ratiosBuffer;
     }
     
-    public float ADS()
+    public float ADS(int productId, int days = 0)
     {
+        Guard.IsGreaterThanOrEqualTo(days, 0);
+        Func<int, DateTime, bool> daysPredicate = days switch
+        {
+            0 => (x,y) => true,
+            _ => IsDateSuitable,
+        };
+        var stockedProductsWithSuitableDate = _salesHistory.Where(x => x.Id.Equals(productId) && daysPredicate(days, x.Date) && x.Stock != 0).AsParallel();
         
-        throw new NotImplementedException();
+        return ((float)stockedProductsWithSuitableDate.Sum((value) => value.Sales)) / stockedProductsWithSuitableDate.Count();
+    }
+
+    public bool IsDateSuitable(int days, DateTime date)
+    {
+        var dateNow = DateTime.Today;
+        
+        return dateNow <= date.AddDays(days);
     }
 
     public int Prediction()

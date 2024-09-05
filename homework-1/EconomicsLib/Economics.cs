@@ -44,6 +44,7 @@ public class Economics
     
     public float ADS()
     {
+        
         throw new NotImplementedException();
     }
 
